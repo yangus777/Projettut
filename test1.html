@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Slider - Snap to increments</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <script>
+		$(function() {
+			$("#slider").slider({
+				value:0,
+				min: 0,
+				max: 500,
+				step: 10,
+				slide: function( event, ui ) {
+					$("#amount").val( "" + ui.value );
+				}
+			});
+			$("#amount").val("" + $("#slider").slider("value"));
+		});
+		
+		$(function() {
+			$("#buttonDuree").click(function() {
+				var duree = Number(document.getElementById("duree").value);
+				var pas = 1;
+				var position = (Number(document.getElementById("amount").value) * duree)/(400);
+				$("#slider").slider('option',{min: 0, step: pas, max: duree});
+				$("#slider").slider( "value", Math.round(position));
+				$("#amount").val(Math.round(position));
+			});
+		});
+</script>
+</head>
+<body>
+	<p>
+		<label for="amount">Temps:</label>
+		<input type="text" id="amount" style="border:0; color:#f6931f; font-weight:bold;">
+	</p>
+	<p>
+		<label for="duree">Entrez la duree totale de l'episode en minute</label>
+		<input type="text" id="duree">
+		<input type="submit" id="buttonDuree">
+	</p> 
+	&nbsp;&nbsp;<div id="slider" style="width:400px;"></div>
+</body>
+</html>
