@@ -1,0 +1,42 @@
+#ehumour{
+	margin-top: 30px;
+	width:400px;
+	height:20px;
+	background-color: blue;
+}
+
+
+#edrame{
+	margin-top: 30px;
+	width:400px;
+	height:20px;
+	background-color: red;
+}
+
+#eaction{
+
+	margin-top: 30px;
+	width:400px;
+	height:20px;
+	background-color: pink;
+}
+#slider{
+	width:400px;
+}
+
+#cliff{
+	background-color:grey;
+	width:400px;
+	height:22px;
+}
+
+#diablo{
+	background-image: url('diablotin.png');
+	width:22px;
+	height:22px;
+	position:relative;
+	left:0%;
+}
+.hide{
+	display:none;
+}
